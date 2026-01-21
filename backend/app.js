@@ -12,6 +12,9 @@ import fileUpload from "express-fileupload";
 const app = express();
 config({ path: "./config/config.env" });
 
+app.get("/", (req,res)=>{
+  res.send("Backend is running");
+});
 app.use(
   cors({
     origin: [process.env.FRONTEND_URL],
