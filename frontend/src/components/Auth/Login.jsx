@@ -4,6 +4,7 @@ import { RiLock2Fill } from "react-icons/ri";
 import { Link, Navigate } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
 import axios from "axios";
+import { BASE_URL } from "../../config";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
 
@@ -18,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/login",
+        `${BASE_URL}/api/v1/user/login`,
         { email, password, role },
         {
           headers: {
